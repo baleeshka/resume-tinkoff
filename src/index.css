@@ -1,0 +1,45 @@
+@import url('fonts/font-awesome.css');
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-family: 'Mulish', sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #1e1e1e;
+	color: rgba(255, 255, 255, 0.81);
+}
+html,
+body,
+#root {
+	height: 100%;
+}
+
+a {
+	color: rgba(255, 255, 255, 0.81);
+	transition: all 0.4s;
+	padding-left: 60px;
+	padding-right: 60px;
+	width: 80px;
+	font-size: 20px;
+	height: 100px;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+a:hover {
+	color: cornflowerblue;
+	font-size: 22px;
+}
+a:active {
+	color: midnightblue;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

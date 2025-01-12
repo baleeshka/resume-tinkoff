@@ -1,22 +1,56 @@
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Logo } from './components';
 
 const Description = styled.div`
 	font-style: italic;
+	display: flex;
+	align-items: center;
+	color: #fff;
 `;
 
-const HeaderContainer = ({ className }) => (
-	<header className={className}>
-		<Logo />
-		<Description>
-			Учусь программировать
-			<br />
-			Работаю в Тинькофф
-			<br />
-			Играю в волейбол
-		</Description>
-	</header>
-);
+const decodeText = (text, onUpdate, delay = 50) => {
+	const randomChar = () => {
+		const chars =
+			"!@#$%^&*()_+[]{}|;:',.<>?/1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		return chars[Math.floor(Math.random() * chars.length)];
+	};
+
+	let currentText = Array(text.length).fill('');
+	let iteration = 0;
+
+	const interval = setInterval(() => {
+		currentText = currentText.map((char, index) => {
+			if (index < iteration) {
+				return text[index];
+			}
+			return randomChar();
+		});
+
+		onUpdate(currentText.join(''));
+
+		if (iteration >= text.length) {
+			clearInterval(interval);
+		}
+
+		iteration += 1;
+	}, delay);
+};
+
+const HeaderContainer = ({ className }) => {
+	const [decodedText, setDecodedText] = useState('');
+
+	useEffect(() => {
+		decodeText('Учусь программировать', setDecodedText);
+	}, []);
+
+	return (
+		<header className={className}>
+			<Logo />
+			<Description>{decodedText}</Description>
+		</header>
+	);
+};
 
 export const Header = styled(HeaderContainer)`
 	position: fixed;

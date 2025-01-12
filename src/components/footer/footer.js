@@ -3,12 +3,49 @@ import styled from 'styled-components';
 
 const HeightText = styled.div`
 	line-height: 35px;
+	color: #fff;
 `;
+
+const WeatherContainer = styled.div`
+	color: #ccc;
+`;
+
+const decodeText = (text, onUpdate, delay = 50) => {
+	const randomChar = () => {
+		const chars =
+			"!@#$%^&*()_+[]{}|;:',.<>?/1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		return chars[Math.floor(Math.random() * chars.length)];
+	};
+
+	let currentText = Array(text.length).fill('');
+	let iteration = 0;
+
+	const interval = setInterval(() => {
+		currentText = currentText.map((char, index) => {
+			if (index < iteration) {
+				return text[index];
+			}
+			return randomChar();
+		});
+
+		onUpdate(currentText.join(''));
+
+		if (iteration >= text.length) {
+			clearInterval(interval);
+		}
+
+		iteration += 1;
+	}, delay);
+};
 
 export const FooterContainer = ({ className }) => {
 	const [city, setCity] = useState('');
 	const [temperature, setTemperature] = useState('');
 	const [weather, setWeather] = useState('');
+
+	const [decodedCity, setDecodedCity] = useState('');
+	const [decodedWeather, setDecodedWeather] = useState('');
+	const [decodedTemperature, setDecodedTemperature] = useState('');
 
 	useEffect(() => {
 		fetch(
@@ -17,8 +54,12 @@ export const FooterContainer = ({ className }) => {
 			.then((res) => res.json())
 			.then(({ name, main, weather }) => {
 				setCity(name);
-				setTemperature(Math.round(main.temp));
+				setTemperature(`${Math.round(main.temp)}°C`);
 				setWeather(weather[0].description);
+
+				decodeText(name, setDecodedCity, 50);
+				decodeText(weather[0].description, setDecodedWeather, 70);
+				decodeText(`${Math.round(main.temp)}°C`, setDecodedTemperature, 90);
 			});
 	}, []);
 
@@ -26,13 +67,13 @@ export const FooterContainer = ({ className }) => {
 		<div className={className}>
 			<HeightText>
 				<div>Телефон: +79643830374</div>
-				<div>Почта - balex.working@gmail.com</div>
+				<div>Почта: balex.working@gmail.com</div>
 			</HeightText>
-			<div>
-				<div>Город - {city}</div>
-				<div>Погода - {weather}</div>
-				<div>Температура: {temperature}°C </div>
-			</div>
+			<WeatherContainer>
+				<div>Город - {decodedCity}</div>
+				<div>Погода - {decodedWeather}</div>
+				<div>Температура: {decodedTemperature}</div>
+			</WeatherContainer>
 		</div>
 	);
 };

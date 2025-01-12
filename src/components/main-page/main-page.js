@@ -22,17 +22,15 @@ export const MainPageContainer = ({ className }) => {
 					<a href="https://t.me/l3ALEX" target="_blank">
 						Telegram
 					</a>
-					|
 					<a href="https://github.com/baleeshka" target="_blank">
 						Github
 					</a>
 					<hr />
-					Сейчас работаю в Страховании, хотел бы попробовать свои силы в
-					Инвестициях, так как сами инвестиции и этот отдел кажется очень
-					интересным сам по себе и в плане задач.
+					Работал в бэк-офисе Инвестиций на очереди маркетинговых акций, однако
+					уволился для того, чтобы начать развиваться в IT направлении
 					<br />
-					Естественно, умею пользоваться TCRM. Опыта работы в инвестициях нет,
-					сам только автоследование подключил.
+					Опыта работы в IT сфере нет, но готов трудиться в поте лица и
+					познавать новые технологии и различные инструменты
 					<hr />
 				</div>
 			</div>
@@ -63,4 +61,5 @@ export const MainPage = styled(MainPageContainer)`
 	margin: auto;
 	text-align: center;
 	display: flex;
+	align-items: center;
 `;

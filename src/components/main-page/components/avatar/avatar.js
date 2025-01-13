@@ -5,35 +5,15 @@ const avaAnimate = keyframes`
   0% {
     border-radius: 14% 86% 40% 60% / 56% 30% 70% 44%;
   }
-  10% {
-    border-radius: 24% 76% 56% 44% / 41% 34% 66% 59%;
-  }
-  20% {
-    border-radius: 37% 63% 65% 35% / 30% 47% 53% 70%;
-  }
   30% {
-    border-radius: 45% 55% 75% 25% / 22% 57% 43% 78%; 
-  }
-  40% {
-    border-radius: 54% 46% 66% 34% / 19% 41% 59% 81%;
-  }
-  50% {
-    border-radius: 45% 55% 75% 25% / 22% 57% 43% 78%;
+    border-radius: 40% 60% 66% 34% / 43% 56% 44% 70%;
   }
   60% {
-    border-radius: 62% 38% 75% 25% / 17% 48% 52% 83%; 
+    border-radius: 60% 40% 86% 14% / 33% 76% 24% 90%;
   }
-  70% {
-    border-radius: 69% 31% 80% 20% / 14% 48% 52% 86%;
-  }
-  80% {
-    border-radius: 75% 25% 80% 20% / 14% 62% 38% 86%;
-  }
-  90% {
-    border-radius: 75% 25% 82% 18% / 37% 67% 33% 63% ;
-  }
+
   100% {
-    border-radius: 57% 43% 85% 15% / 28% 76% 24% 72% ;
+    border-radius: 40% 60% 66% 34% / 43% 56% 44% 70%; /* Финальный кадр с не квадратной формой */
   }
 `;
 
@@ -45,7 +25,7 @@ const AnimatedAvatarContainer = styled.div`
 	border: 4px solid rgba(255, 255, 255, 0.81);
 	box-shadow: 4px 4px 14px rgba(255, 255, 255, 0.81);
 	background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-	animation: ${avaAnimate} 10s infinite alternate;
+	animation: ${avaAnimate} 5s ease-in-out infinite alternate;
 `;
 
 const AvatarImage = styled.img`

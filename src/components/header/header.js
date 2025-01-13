@@ -7,9 +7,13 @@ const Description = styled.div`
 	display: flex;
 	align-items: center;
 	color: #fff;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 250px;
 `;
 
-const decodeText = (text, onUpdate, delay = 50) => {
+const decodeText = (text, onUpdate, delay = 60) => {
 	const randomChar = () => {
 		const chars =
 			"!@#$%^&*()_+[]{}|;:',.<>?/1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -56,6 +60,7 @@ export const Header = styled(HeaderContainer)`
 	position: fixed;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	top: 0;
 	width: 1000px;
 	height: 120px;

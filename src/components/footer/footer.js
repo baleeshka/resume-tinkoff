@@ -97,7 +97,7 @@ export const FooterContainer = ({ className }) => {
 				</div>
 			</HeightText>
 			<WeatherContainer>
-				<div>ГорGод: {decodedCity}</div>
+				<div>Город: {decodedCity}</div>
 				<div>Погода: {decodedWeather}</div>
 				<div>Температура: {decodedTemperature}</div>
 			</WeatherContainer>

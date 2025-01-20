@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/resume-tinkoff/static/css/main.eced557d.css",
-    "main.js": "/resume-tinkoff/static/js/main.5f233b30.js",
-    "static/media/fontawesome-webfont.svg?v=4.7.0": "/resume-tinkoff/static/media/fontawesome-webfont.c1e38fd9e0e74ba58f7a.svg",
+    "main.css": "/resume-tinkoff/static/css/main.4980d665.css",
+    "main.js": "/resume-tinkoff/static/js/main.a01f31bd.js",
+    "static/media/fontawesome-webfont.svg?v=4.7.0": "/resume-tinkoff/static/media/fontawesome-webfont.6878d55e3615ccf40c38.svg",
     "static/media/fontawesome-webfont.eot": "/resume-tinkoff/static/media/fontawesome-webfont.8b43027f47b20503057d.eot",
     "static/media/fontawesome-webfont.ttf?v=4.7.0": "/resume-tinkoff/static/media/fontawesome-webfont.1e59d2330b4c6deb84b3.ttf",
     "static/media/photo_2023-07-01_14-02-43.jpg": "/resume-tinkoff/static/media/photo_2023-07-01_14-02-43.2c7886d2e925ec89c38d.jpg",
     "static/media/fontawesome-webfont.woff?v=4.7.0": "/resume-tinkoff/static/media/fontawesome-webfont.f691f37e57f04c152e23.woff",
     "static/media/fontawesome-webfont.woff2?v=4.7.0": "/resume-tinkoff/static/media/fontawesome-webfont.20fd1704ea223900efa9.woff2",
     "index.html": "/resume-tinkoff/index.html",
-    "main.eced557d.css.map": "/resume-tinkoff/static/css/main.eced557d.css.map",
-    "main.5f233b30.js.map": "/resume-tinkoff/static/js/main.5f233b30.js.map"
+    "main.4980d665.css.map": "/resume-tinkoff/static/css/main.4980d665.css.map",
+    "main.a01f31bd.js.map": "/resume-tinkoff/static/js/main.a01f31bd.js.map"
   },
   "entrypoints": [
-    "static/css/main.eced557d.css",
-    "static/js/main.5f233b30.js"
+    "static/css/main.4980d665.css",
+    "static/js/main.a01f31bd.js"
   ]
 }

@@ -1,63 +1,50 @@
 import styled from 'styled-components';
 import { Avatar } from './components';
+import LinkGroup from './components/link-group/LinkGroup';
+import Section from './components/section/section';
 import Skill from './components/skill/skill';
 
 const FurtherDescription = styled.div`
 	padding: 20px 40px;
 	margin: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 10px;
+	align-items: center;
 `;
 
 export const MainPageContainer = ({ className }) => {
+	const links = [
+		{ href: 'https://t.me/l3ALEX', text: 'Telegram' },
+		{ href: 'https://github.com/baleeshka', text: 'Github' },
+	];
 	return (
 		<>
 			<div className={className}>
 				<Avatar />
 				<div>
-					<hr />
-					Активно изучаю программирование и пытаюсь найти работу в данном
-					направлении, чтобы получить коммерческий опыт разработки и повысить
-					уровень своих навыков программирования
-					<hr />
-					<a href="https://t.me/l3ALEX" target="_blank">
-						Telegram
-					</a>
-					<a href="https://github.com/baleeshka" target="_blank">
-						Github
-					</a>
-					<hr />
-					Работал в бэк-офисе Инвестиций на очереди маркетинговых акций, однако
-					уволился для того, чтобы начать развиваться в IT направлении
-					<hr />
+					<Section>
+						Мне 20 лет. Я не учусь в высших учебных заведениях, однако готов
+						уделять всё своё время программированию
+					</Section>
+					<LinkGroup links={links} />
+					<Section>
+						Обучался программированию самостоятельно, параллельно работая в
+						разных местах, чтобы поддерживать себя на плаву самостоятельно.
+						Сейчас в активном поиске работы, чтобы начать свой путь
+						разработчика и развивать навыки в выбранной области
+					</Section>
 				</div>
 			</div>
 			<FurtherDescription>
-				<hr />
-				Занимаюсь волейболом и хожу в зал.
-				<br />
-				<hr />
 				Мои навыки:
-				<Skill
-					backgroundImage="linear-gradient(to right, #0acffe 0%, #495aff 100%);"
-					technology="CSS"
-				/>
-				<Skill
-					backgroundImage="linear-gradient(to bottom, #323232 0%, #3F3F3F 40%, #1C1C1C 150%), linear-gradient(to top, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.25) 200%);
- background-blend-mode: multiply;"
-					technology="HTML"
-				/>
-				<Skill
-					backgroundImage="linear-gradient(60deg, #29323c 0%, #485563 100%)"
-					technology="JavaScript"
-				/>
-				<Skill
-					backgroundImage="linear-gradient(to top, #09203f 0%, #537895 100%)"
-					technology="React"
-				/>
-				<Skill
-					backgroundImage="linear-gradient(to right, #868f96 0%, #596164 100%)"
-					technology="Git"
-				/>
-				<hr />
+				<Skill technology="CSS3" />
+				<Skill technology="HTML5" />
+				<Skill technology="JavaScript" />
+				<Skill technology="TypeScript" />
+				<Skill technology="React" />
+				<Skill technology="Git" />
 			</FurtherDescription>
 		</>
 	);

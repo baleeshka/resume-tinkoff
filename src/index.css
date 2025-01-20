@@ -20,26 +20,12 @@ body,
 	height: 100%;
 }
 
-a {
-	color: rgba(255, 255, 255, 0.81);
-	transition: all 0.4s;
-	padding-left: 60px;
-	padding-right: 60px;
-	width: 80px;
-	font-size: 20px;
-	height: 100px;
-	text-decoration: none;
-	text-align: center;
-	vertical-align: middle;
-}
-a:hover {
-	color: cornflowerblue;
-	font-size: 22px;
-}
-a:active {
-	color: midnightblue;
-}
-
 code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+	font-family:
+		source-code-pro,
+		Menlo,
+		Monaco,
+		Consolas,
+		Courier New,
+		monospace;
 }

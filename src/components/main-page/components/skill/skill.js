@@ -4,17 +4,23 @@ const SkillContainer = styled.div`
 	display: inline-flex;
 	align-items: center;
 	padding: 8px 16px;
-	border-radius: 10px;
-	background-image: ${(props) => props.backgroundImage || 'none'};
-	background-color: ${(props) => props.backgroundColor || '#6c5ce7'};
-	color: white;
+	border: 2px solid rgba(255, 255, 255, 0.81);
+	border-radius: 15px;
+	background-color: transparent;
 	font-size: 14px;
+	cursor: pointer;
+	transition:
+		box-shadow 0.3s ease,
+		transform 0.3s ease;
+	max-width: 100px; /* Ограничиваем максимальную ширину */
+	flex-shrink: 0;
+
+	&:hover {
+		box-shadow: 4px 4px 14px rgba(255, 255, 255, 0.81);
+		transform: translate(-2px, -2px);
+	}
 `;
 
-const Skill = ({ backgroundColor, backgroundImage, technology }) => (
-	<SkillContainer backgroundColor={backgroundColor} backgroundImage={backgroundImage}>
-		{technology}
-	</SkillContainer>
-);
+const Skill = ({ technology }) => <SkillContainer>{technology}</SkillContainer>;
 
 export default Skill;

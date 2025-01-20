@@ -1,5 +1,18 @@
 import { useEffect, useState } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
 import styled from 'styled-components';
+
+const CopyableText = styled.span`
+	color: rgba(255, 255, 255, 0.81);
+	transition: color 0.4s;
+	font-size: 20px;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		color: #6495ed;
+	}
+`;
 
 const HeightText = styled.div`
 	line-height: 35px;
@@ -9,6 +22,7 @@ const HeightText = styled.div`
 		display: flex;
 		align-items: center;
 		gap: 5px;
+		position: relative;
 	}
 `;
 
@@ -55,6 +69,18 @@ const decodeText = (text, onUpdate, delay = 60) => {
 	}, delay);
 };
 
+const copyToClipboard = (text) => {
+	const tempInput = document.createElement('input');
+	tempInput.value = text;
+	document.body.appendChild(tempInput);
+
+	tempInput.select();
+	tempInput.setSelectionRange(0, 99999);
+
+	document.execCommand('copy');
+	document.body.removeChild(tempInput);
+};
+
 export const FooterContainer = ({ className }) => {
 	const [city, setCity] = useState('');
 	const [temperature, setTemperature] = useState('');
@@ -88,12 +114,29 @@ export const FooterContainer = ({ className }) => {
 
 	return (
 		<div className={className}>
+			<Toaster />
 			<HeightText>
 				<div>
-					Телефон: <span>{decodedPhone}</span>
+					Телефон:{' '}
+					<CopyableText
+						onClick={() => {
+							copyToClipboard(decodedPhone);
+							toast.success('Текст скопирован!');
+						}}
+					>
+						{decodedPhone}
+					</CopyableText>
 				</div>
 				<div>
-					Почта: <span>{decodedEmail}</span>
+					Почта:{' '}
+					<CopyableText
+						onClick={() => {
+							copyToClipboard(decodedEmail);
+							toast.success('Текст скопирован!');
+						}}
+					>
+						{decodedEmail}
+					</CopyableText>
 				</div>
 			</HeightText>
 			<WeatherContainer>
